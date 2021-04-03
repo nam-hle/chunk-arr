@@ -1,6 +1,8 @@
 node_modules
-dist
+lib
 
+.husky
+coverage
 .nyc_output
 .idea
 *.iml

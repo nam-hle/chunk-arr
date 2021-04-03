@@ -1,4 +1,4 @@
-# Welcome to chunkify 👋
+# Welcome to chunka
 [![Version](https://img.shields.io/npm/v/chunkify.svg)](https://www.npmjs.com/package/chunkify)
 ![Prerequisite](https://img.shields.io/badge/node-%3E%3D10-blue.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)

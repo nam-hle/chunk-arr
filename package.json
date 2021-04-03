@@ -1,20 +1,28 @@
 {
-  "name": "chunkify",
+  "name": "chunka",
   "version": "1.0.0",
   "description": "A utility function to chunk an array based on the predicate function",
   "main": "dist/index.js",
   "scripts": {
-    "test": "xo && nyc mocha dist/test/test.js",
-	"build": "tsc"
+    "build": "tsc",
+    "test": "xo && nyc mocha lib/test.js",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=10"
   },
-  "types": "dist",
+  "types": "lib",
   "files": [
-    "dist"
+    "lib/index.js",
+	"lib/index.d.js",
+	"README.md"
   ],
-  "keywords": [],
+  "keywords": [
+	"utility",
+	"array",
+	"chunk",
+	"split"
+  ],
   "author": {
     "name": "Nam Hoang Le",
     "email": "drnam288@gmail.com",
@@ -28,16 +36,17 @@
     "mocha": "^8.3.2",
     "nyc": "^15.1.0",
     "typescript": "^4.2.3",
-    "xo": "^0.38.2"
+    "xo": "^0.38.2",
+    "husky": "^6.0.0"
   },
   "xo": {
     "prettier": true,
     "printWidth": 120
   },
   "nyc": {
-	"reporter": [
-	  "text",
-	  "lcov"
-	]
+    "reporter": [
+      "text",
+      "lcov"
+    ]
   }
 }
