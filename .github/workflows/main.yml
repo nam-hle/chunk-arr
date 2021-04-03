@@ -14,10 +14,20 @@ jobs:
           - 12
           - 10
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run build
-      - run: npm test
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Compile
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+      - uses: codecov/codecov-action@v1
