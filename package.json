@@ -33,5 +33,11 @@
   "xo": {
     "prettier": true,
     "printWidth": 120
+  },
+  "nyc": {
+	"reporter": [
+	  "text",
+	  "lcov"
+	]
   }
 }
