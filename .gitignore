@@ -1,0 +1,8 @@
+node_modules
+dist
+
+.nyc_output
+.idea
+*.iml
+.DS_Store
+tsconfig.tsbuildinfo
