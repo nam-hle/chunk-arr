@@ -1,6 +1,6 @@
 {
   "name": "chunk-arr",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "A utility function to chunk an array based on the predicate function",
   "main": "lib/index.js",
   "scripts": {
@@ -13,8 +13,8 @@
   },
   "types": "lib/main",
   "files": [
-	"lib/index.js",
-	"lib/index.d.ts",
+    "lib/index.js",
+    "lib/index.d.ts",
     "lib/main",
     "README.md"
   ],
@@ -46,16 +46,16 @@
   "xo": {
     "prettier": true,
     "printWidth": 120,
-	"rules": {
-	  "unicorn/no-for-loop": "off",
-	  "unicorn/filename-case": "off"
-	}
+    "rules": {
+      "unicorn/no-for-loop": "off",
+      "unicorn/filename-case": "off"
+    }
   },
   "nyc": {
     "reporter": [
       "text",
       "lcov"
     ],
-	"exclude": "src/test"
+    "exclude": "src/test"
   }
 }
