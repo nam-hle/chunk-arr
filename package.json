@@ -1,6 +1,6 @@
 {
   "name": "chunka",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A utility function to chunk an array based on the predicate function",
   "main": "dist/index.js",
   "scripts": {
