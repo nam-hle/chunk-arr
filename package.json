@@ -14,14 +14,17 @@
   "types": "lib",
   "files": [
     "index.js",
-    "index.d.js",
+    "index.d.ts",
     "README.md"
   ],
   "keywords": [
     "utility",
     "array",
     "chunk",
-    "split"
+    "split",
+	"group",
+	"slice",
+	"rollup"
   ],
   "author": {
     "name": "Nam Hoang Le",
