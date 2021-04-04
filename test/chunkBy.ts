@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import {chunkBy} from '../src/chunkBy';
+import {chunkBy} from '../src';
 
 describe('chunkBy', () => {
 	const isEven = (number: number) => number % 2 === 0;
