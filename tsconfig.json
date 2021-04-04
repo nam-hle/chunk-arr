@@ -3,23 +3,18 @@
 	"incremental": true,
 	"target": "es5",
 	"module": "commonjs",
-	"declaration": true,
-	"declarationMap": true,
+	"outDir": "./lib",
 	"sourceMap": true,
+	"declaration": true,
 	"isolatedModules": true,
-
 	"strict": true,
-
 	"noUnusedLocals": true,
 	"noUnusedParameters": true,
 	"noImplicitReturns": true,
 	"noFallthroughCasesInSwitch": true,
-	"noUncheckedIndexedAccess": true,
 	"noPropertyAccessFromIndexSignature": true,
-
 	"moduleResolution": "node",
 	"esModuleInterop": true,
-
 	"skipLibCheck": false,
 	"forceConsistentCasingInFileNames": true
   }

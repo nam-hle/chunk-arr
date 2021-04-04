@@ -1,6 +1,6 @@
 export function chunkBy<T, U>(
 	array: readonly T[],
-	func: (value: T) => U
+	func: (element: T, index: number) => U
 ): T[][] {
 	if (array.length === 0) {
 		return [];
@@ -9,16 +9,17 @@ export function chunkBy<T, U>(
 	const chunks: T[][] = [];
 	let previousResult: U | undefined;
 
-	for (const element of array) {
+	for (let index = 0; index < array.length; index++) {
+		const element = array[index];
 		const lastChunk = chunks[chunks.length - 1];
 
 		if (!lastChunk) {
 			chunks.push([element]);
-			previousResult = func(element);
+			previousResult = func(element, index);
 			continue;
 		}
 
-		const currentResult = func(element);
+		const currentResult = func(element, index);
 		if (currentResult === previousResult) {
 			lastChunk.push(element);
 		} else {

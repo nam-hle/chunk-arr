@@ -1,20 +1,21 @@
 {
-  "name": "chunka",
+  "name": "chunk-arr",
   "version": "1.0.2",
   "description": "A utility function to chunk an array based on the predicate function",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "xo && nyc mocha lib/test.js",
+    "test": "xo src && nyc mocha \"./lib/test/**/*.js\"",
     "prepare": "husky install"
   },
   "engines": {
     "node": ">=10"
   },
-  "types": "lib",
+  "types": "lib/main",
   "files": [
-    "index.js",
-    "index.d.ts",
+	"lib/index.js",
+	"lib/index.d.ts",
+    "lib/main",
     "README.md"
   ],
   "keywords": [
@@ -24,7 +25,7 @@
     "split",
     "group",
     "slice",
-    "rollup"
+    "seperate"
   ],
   "author": {
     "name": "Nam Hoang Le",
@@ -36,20 +37,25 @@
     "@types/chai": "^4.2.16",
     "@types/mocha": "^8.2.2",
     "chai": "^4.3.4",
+    "husky": "^6.0.0",
     "mocha": "^8.3.2",
     "nyc": "^15.1.0",
     "typescript": "^4.2.3",
-    "xo": "^0.38.2",
-    "husky": "^6.0.0"
+    "xo": "^0.38.2"
   },
   "xo": {
     "prettier": true,
-    "printWidth": 120
+    "printWidth": 120,
+	"rules": {
+	  "unicorn/no-for-loop": "off",
+	  "unicorn/filename-case": "off"
+	}
   },
   "nyc": {
     "reporter": [
       "text",
       "lcov"
-    ]
+    ],
+	"exclude": "src/test"
   }
 }

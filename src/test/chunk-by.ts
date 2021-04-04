@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import {chunkBy} from './index';
+import {chunkBy} from '../main/chunkBy';
 
 describe('chunkBy', () => {
 	const isEven = (number: number) => number % 2 === 0;
@@ -64,6 +64,18 @@ describe('chunkBy', () => {
 			expect(result[0]?.[0]).to.be.equal(users[0]);
 			expect(result[0]?.[1]).to.be.equal(users[1]);
 			expect(result[1]?.[0]).to.be.equal(users[2]);
+		});
+	});
+
+	describe('describe given a function used to chunk by size', () => {
+		it('should chunk array by size', () => {
+			expect(
+				chunkBy([3, 1, 4, 1, 5, 9, 2, 6], (_, index) => Math.floor(index / 3))
+			).to.be.deep.equal([
+				[3, 1, 4],
+				[1, 5, 9],
+				[2, 6]
+			]);
 		});
 	});
 });
