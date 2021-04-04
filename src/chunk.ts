@@ -5,7 +5,7 @@ export function chunk<T>(array: T[], size = 1): T[][] {
 		return [];
 	}
 
-	return chunkBy(array, (_current, index) => {
+	return chunkBy(array, (_, index) => {
 		return Math.floor(index / size);
 	});
 }

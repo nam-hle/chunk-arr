@@ -1,14 +1,10 @@
 # Welcome to chunka
-[![Version](https://img.shields.io/npm/v/chunkify.svg)](https://www.npmjs.com/package/chunkify)
+[![Version](https://img.shields.io/npm/v/chunk-arr.svg)](https://www.npmjs.com/package/chunk-arr)
 ![Prerequisite](https://img.shields.io/badge/node-%3E%3D10-blue.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
-[![codecov](https://codecov.io/gh/nam288/chunkify/branch/main/graph/badge.svg?token=fbqIQ8uk7t)](https://codecov.io/gh/nam288/chunkify)
+[![codecov](https://codecov.io/gh/nam288/chunk-arr/branch/main/graph/badge.svg?token=fbqIQ8uk7t)](https://codecov.io/gh/nam288/chunk-arr)
 
-> A utility function to chunk an array based on the predicate function
-
-## Prerequisites
-
-- node >=10
+> A collection of utility functions to split an array into chunks by size or by certain condition
 
 ## Install
 
@@ -20,27 +16,27 @@ $ npm install open
 
 
 ```js
-const chunkArr = require('chunk-arr');
+const {chunk, chunkBy, chunkWhile} = require('chunk-arr');
 
 // chunk: split array into fixed sub-arrays, like lodash/chunk
 const chars = ['a', 'b', 'c', 'd', 'e'];
-console.log(chunkArr.chunk(chars, 2));
-// Output: [ ['a', 'b'], ['c', 'd'], ['e'] ]
+chunkArr.chunk(chars, 2);
+// [ ['a', 'b'], ['c', 'd'], ['e'] ]
 
 // chunkBy: chunk array elements together based on the return value of the a function
 const nums = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
-console.log(chunkArr.chunkBy(nums, num => num % 2));
-// Output: [ [3, 1], [4], [1, 5, 9], [2, 6], [5, 3, 5] ]
+chunkBy(nums, num => num % 2);
+// [ [3, 1], [4], [1, 5, 9], [2, 6], [5, 3, 5] ]
 
 // chunkWhile: split chunks between two array elements (previous, current) when the passing function return false
 const nums2 = [1, 2, 4, 9, 10, 11, 12, 15, 16, 19, 20, 21];
-console.log(chunkArr.chunkWhile(nums2, (prev, curr) => prev + 1 === curr));
-// Output: [ [1, 2], [4], [9, 10, 11, 12], [15, 16], [19, 20, 21] ]
+chunkWhile(nums2, (prev, curr) => prev + 1 === curr);
+// [ [1, 2], [4], [9, 10, 11, 12], [15, 16], [19, 20, 21] ]
 ```
 
 ## API
 
-### chunk
+### chunk(array, size = 1)
 
 Work like lodash/chunk: creates an array of elements splits into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
 
@@ -100,12 +96,6 @@ console.log(chunkWhile(nums2, (prev, curr) => prev + 1 === curr));
 
 👤 **Nam Hoang Le**
 
-* Github: [@nam288](https://github.com/nam288)
-
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

@@ -14,8 +14,7 @@
   },
   "types": "dist/src",
   "files": [
-    "dist/src",
-    "README.md"
+    "dist/src"
   ],
   "keywords": [
     "utility",
@@ -61,9 +60,6 @@
     ],
     "extension": [
       ".ts"
-    ],
-    "exclude": [
-      "**/test/**"
     ]
   }
 }
