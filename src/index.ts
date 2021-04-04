@@ -1,1 +1,1 @@
-export * from './main/chunkBy';
+export * from './chunkBy';

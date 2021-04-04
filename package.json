@@ -2,20 +2,19 @@
   "name": "chunk-arr",
   "version": "2.0.0",
   "description": "A utility function to chunk an array based on the predicate function",
-  "main": "lib/index.js",
+  "repository": "nam288/chunk-arr",
+  "main": "dist/src",
   "scripts": {
     "build": "tsc",
-    "test": "xo src && nyc mocha \"./lib/test/**/*.js\"",
-    "prepare": "husky install"
+    "test": "xo && nyc mocha \"./dist/test/**/*.js\"",
+    "prepare": "husky install && npm run build"
   },
   "engines": {
     "node": ">=10"
   },
-  "types": "lib/main",
+  "types": "dist/src",
   "files": [
-    "lib/index.js",
-    "lib/index.d.ts",
-    "lib/main",
+	"dist/src",
     "README.md"
   ],
   "keywords": [
@@ -44,6 +43,9 @@
     "xo": "^0.38.2"
   },
   "xo": {
+	"ignores": [
+	  "documentation/examples/*"
+	],
     "prettier": true,
     "printWidth": 120,
     "rules": {
@@ -52,10 +54,16 @@
     }
   },
   "nyc": {
-    "reporter": [
-      "text",
-      "lcov"
-    ],
-    "exclude": "src/test"
+	"reporter": [
+	  "text",
+	  "html",
+	  "lcov"
+	],
+	"extension": [
+	  ".ts"
+	],
+	"exclude": [
+	  "**/test/**"
+	]
   }
 }

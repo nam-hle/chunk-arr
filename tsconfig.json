@@ -3,8 +3,8 @@
 	"incremental": true,
 	"target": "es5",
 	"module": "commonjs",
-	"outDir": "./lib",
-	"sourceMap": true,
+	"outDir": "dist",
+	"rootDir": ".",
 	"declaration": true,
 	"isolatedModules": true,
 	"strict": true,
@@ -17,5 +17,6 @@
 	"esModuleInterop": true,
 	"skipLibCheck": false,
 	"forceConsistentCasingInFileNames": true
-  }
+  },
+  "include": ["src", "test"]
 }
