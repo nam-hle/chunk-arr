@@ -1,4 +1,4 @@
-import {chunk} from './chunk'
+import {chunk} from './chunk';
 
 export default chunk;
 export * from './chunkBy';
