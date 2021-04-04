@@ -1,6 +1,7 @@
 node_modules
 lib
 
+*.map
 .husky
 coverage
 .nyc_output
