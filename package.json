@@ -1,6 +1,6 @@
 {
   "name": "chunk-arr",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A utility function to chunk an array based on the predicate function",
   "repository": "nam288/chunk-arr",
   "main": "dist/src",
@@ -14,7 +14,7 @@
   },
   "types": "dist/src",
   "files": [
-	"dist/src",
+    "dist/src",
     "README.md"
   ],
   "keywords": [
@@ -43,9 +43,9 @@
     "xo": "^0.38.2"
   },
   "xo": {
-	"ignores": [
-	  "documentation/examples/*"
-	],
+    "ignores": [
+      "documentation/examples/*"
+    ],
     "prettier": true,
     "printWidth": 120,
     "rules": {
@@ -54,16 +54,16 @@
     }
   },
   "nyc": {
-	"reporter": [
-	  "text",
-	  "html",
-	  "lcov"
-	],
-	"extension": [
-	  ".ts"
-	],
-	"exclude": [
-	  "**/test/**"
-	]
+    "reporter": [
+      "text",
+      "html",
+      "lcov"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "**/test/**"
+    ]
   }
 }
