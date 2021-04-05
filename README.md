@@ -11,6 +11,7 @@
 * Written in TypeScript
 * Actively maintained
 * Fully coverage tests
+* Inspired from [Ruby chunk](https://ruby-doc.org/core-3.0.0/Enumerable.html#method-i-chunk)
 
 ## Install
 
@@ -147,6 +148,6 @@ console.log(chunkWhile(nums, (prev, curr) => prev + 1 === curr)
 
 * **Nam Hoang Le**
 
-## Show your support
+## Inspri
 
 Give a ⭐️ if this project helped you!
