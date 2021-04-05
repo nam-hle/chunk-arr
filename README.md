@@ -1,9 +1,9 @@
-# Welcome to chunka
+# chunk-arr
 [![Version](https://img.shields.io/npm/v/chunk-arr.svg)](https://www.npmjs.com/package/chunk-arr)
 ![Prerequisite](https://img.shields.io/badge/node-%3E%3D10-blue.svg)
 [![codecov](https://codecov.io/gh/nam288/chunk-arr/branch/main/graph/badge.svg?token=fbqIQ8uk7t)](https://codecov.io/gh/nam288/chunk-arr)
 
-> A collection of utility functions to split an array into chunks by size or by certain conditions.
+> A collection of utility functions to split an array into chunks by size or certain condition.
 
 ## Install
 
@@ -137,7 +137,7 @@ console.log(chunkWhile(nums, (prev, curr) => prev + 1 === curr)
 
 ## Author
 
-👤 **Nam Hoang Le**
+* **Nam Hoang Le**
 
 ## Show your support
 
