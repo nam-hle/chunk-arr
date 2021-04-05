@@ -1,6 +1,6 @@
 {
   "name": "chunk-arr",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A utility function to chunk an array based on the predicate function",
   "repository": "nam288/chunk-arr",
   "main": "dist/src",
