@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "test": "xo && nyc mocha \"./dist/test/**/*.js\"",
-    "prepare": "husky install && npm run build"
+    "prepare": "npm run build"
   },
   "engines": {
     "node": ">=10"
@@ -35,16 +35,12 @@
     "@types/chai": "^4.2.16",
     "@types/mocha": "^8.2.2",
     "chai": "^4.3.4",
-    "husky": "^6.0.0",
     "mocha": "^8.3.2",
     "nyc": "^15.1.0",
     "typescript": "^4.2.3",
     "xo": "^0.38.2"
   },
   "xo": {
-    "ignores": [
-      "documentation/examples/*"
-    ],
     "prettier": true,
     "printWidth": 120,
     "rules": {
