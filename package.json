@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "test": "xo && nyc mocha \"./dist/test/**/*.js\"",
-    "prepare": "npm run build"
+    "prepare": "npm run build && npm test"
   },
   "engines": {
     "node": ">=10"

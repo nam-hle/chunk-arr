@@ -1,8 +1,10 @@
 node_modules/
-package-lock.json
 dist/
-coverage
+coverage/
+
+package-lock.json
 .nyc_output
 .idea
 *.iml
 .DS_Store
+*.tgz
