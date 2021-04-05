@@ -1,3 +1,4 @@
+/** @internal */
 export function chunkBase<T>(
 	array: readonly T[],
 	needToSplit: (previous: T, current: T, index: number) => boolean
