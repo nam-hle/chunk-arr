@@ -16,6 +16,7 @@
   "files": [
     "dist/src"
   ],
+  "issue": "https://github.com/nam288/chunk-arr/issues",
   "keywords": [
     "utility",
     "array",

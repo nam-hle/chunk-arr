@@ -1,9 +1,16 @@
 # chunk-arr
 [![Version](https://img.shields.io/npm/v/chunk-arr.svg)](https://www.npmjs.com/package/chunk-arr)
-![Prerequisite](https://img.shields.io/badge/node-%3E%3D10-blue.svg)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 [![codecov](https://codecov.io/gh/nam288/chunk-arr/branch/main/graph/badge.svg?token=fbqIQ8uk7t)](https://codecov.io/gh/nam288/chunk-arr)
-
+![build](https://github.com/nam288/chunk-arr/actions/workflows/main.yml/badge.svg)
 > A collection of utility functions to split an array into chunks by size or certain condition.
+
+## Why?
+
+* Minimal APIs
+* Written in TypeScript
+* Actively maintained
+* Fully coverage tests
 
 ## Install
 
@@ -15,7 +22,7 @@ $ npm install chunk-arr
 
 
 ```js
-const {chunkBy} = require('chunk-arr');
+const { chunkBy } = require('chunk-arr');
 
 chunkBy([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5], n => n % 2);
 // [ [3, 1], [4], [1, 5, 9], [2, 6], [5, 3, 5] ]
@@ -41,10 +48,11 @@ The array to process
 * Type: `number`
 * Default: `1`
 
-The size of each chunk.
+The size of each chunk. Return empty array if `size` smaller than `1`.
 
-**Note:** The `size` will be converted to the largest number that smaller than `size` by `Math.floor`. If the converted number smaller than 1, the function will return an empty array.
+**Note:** The `size` will be converted to the largest number that smaller than `size` by `Math.floor`.
 
+**Example:**
 ```js
 const { chunk } = require('chunk-arr');
 // or
@@ -79,12 +87,12 @@ The array to process
 
 The function used to chunk array based on its return value. It takes two arguments: the current element is iterating and its index
 
-**Example:** Split array based on element types
+**Example:** Split based on element types
 
 ```js
 const { chunkBy } = require('chunk-arr');
 
-const arr = [true, -3, 1, "a", "b", "c"];
+const arr = [true, -3, 1, 'a', 'b', 'c'];
 
 console.log(chunkBy(arr, e => typeof e));
 // Output: [ [true], [-3, 1], ['a', 'b', 'c'] ]
@@ -130,7 +138,7 @@ const nums = [1, 2, 4, 9, 10, 11, 12, 15, 16, 19, 20, 21];
 
 console.log(chunkWhile(nums, (prev, curr) => prev + 1 === curr)
 		    .map((chunk) => chunk.length > 2 ? `${chunk[0]}-${chunk[chunk.length - 1]}` : chunk)
-		    .join(",")
+		    .join(',')
 );
 // Output: '1,2,4,9-12,15,16,19-21'
 ```
