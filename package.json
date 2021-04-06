@@ -1,6 +1,6 @@
 {
   "name": "chunk-arr",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A collection of utility functions to split an array into chunks by size or certain condition",
   "repository": "nam288/chunk-arr",
   "main": "dist/src",
