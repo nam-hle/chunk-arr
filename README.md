@@ -144,10 +144,30 @@ console.log(chunkWhile(nums, (prev, curr) => prev + 1 === curr)
 // Output: '1,2,4,9-12,15,16,19-21'
 ```
 
+* Split Markdown file by sections
+
+```js
+const Fs = require('fs');
+const { chunkWhile } = require('chunk-arr');
+
+try {
+	const data = Fs.readFileSync('./README.md', 'utf8');
+	console.log(chunkWhile(data.split('\n'), (_, current) => !current.startsWith('#')));
+} catch (error) {
+	console.error(error);
+}
+
+// Output:
+// [
+//   ['# chunk-arr', ...],
+//   ['## Why?, ...],
+//   ...
+//   ['## Author', ...]
+// ]
+```
+
 ## Author
 
 * **Nam Hoang Le**
 
-## Inspri
-
-Give a ⭐️ if this project helped you!
+Give a ⭐️ if this package helped you!
