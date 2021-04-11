@@ -3,7 +3,8 @@
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 [![codecov](https://codecov.io/gh/nam288/chunk-arr/branch/main/graph/badge.svg?token=fbqIQ8uk7t)](https://codecov.io/gh/nam288/chunk-arr)
 ![build](https://github.com/nam288/chunk-arr/actions/workflows/main.yml/badge.svg)
-> A collection of utility functions to split an array into chunks by size or certain condition.
+
+> Split array into chunks by size or certain condition.
 
 ## Why?
 
@@ -25,8 +26,8 @@ $ npm install chunk-arr
 ```js
 const { chunkBy } = require('chunk-arr');
 
-chunkBy([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5], n => n % 2);
-// [ [3, 1], [4], [1, 5, 9], [2, 6], [5, 3, 5] ]
+chunkBy([3, 1, 4, 1, 5, 9, 2, 6], n => n % 2);
+// [ [3, 1], [4], [1, 5, 9], [2, 6] ]
 
 ```
 
@@ -57,22 +58,20 @@ The size of each chunk. Return empty array if `size` smaller than `1`.
 ```js
 const { chunk } = require('chunk-arr');
 // or
-// const chunk = require('chunk-arr');
+// const chunk = require('chunk-arr').default;
 
 const chars = ['a', 'b', 'c', 'd', 'e'];
 
 console.log(chunk(chars));
 // Output: [ ['a'], ['b'], ['c'], ['d'], ['e'] ]
 
-console.log(chunk(chars, 2.4));
+console.log(chunk(chars, 2.7));
 // Output: [ ['a', 'b'], ['c', 'd'], ['e'] ]
 ```
 
 ### `chunkBy(array, func)`
 
-Iterate over array elements, chunking them together based on the return value of the block.
-
-Consecutive elements which return the same block value are chunked together.
+Iterate over `array` elements, chunking them together based on the returned value of `func`.
 
 #### array
 
@@ -86,9 +85,10 @@ The array to process
 * Require: `true`
 * Type: `(element: T, index: number): U`
 
-The function used to chunk array based on its return value. It takes two arguments: the current element is iterating and its index
+The function used to chunk `array` based on its return value. It takes two arguments: the current element is iterating and its index
 
-**Example:** Split based on element types
+**Example:**
+* Split based on element types:
 
 ```js
 const { chunkBy } = require('chunk-arr');
@@ -99,9 +99,19 @@ console.log(chunkBy(arr, e => typeof e));
 // Output: [ [true], [-3, 1], ['a', 'b', 'c'] ]
 ```
 
+* Split strings by their sizes:
+```js
+const { chunkBy } = require('chunk-arr');
+
+const arr = ['Lorem', 'Ipsum', 'is', 'simply', 'dummy', 'text'];
+
+console.log(chunkBy(arr, s => s.length));
+// Output: [ ['Lorem', 'Ipsum'], ['is'], ['simply', 'dummy'], ['text'] ]
+```
+
 ### `chunkWhile(array, func)`
 
-This method splits the array between `previous` and `current` element if the function receives those elements return false.
+This method splits the `array` between adjacent elements if the `func` receives those elements returns `false`.
 
 #### array
 
@@ -115,11 +125,11 @@ The array to process
 * Require: `true`
 * Type: `(previous: T, current: T): boolean`
 
-The function, which receives the `previous` and `current` element, uses to split array between them if it returns `false`
+The function, which receives the two adjacent elements alternatively, splits array between them if it returns `false`.
 
 **Example:**
 
-* Split array into non-decreasing chunks
+* Split array into non-decreasing chunks:
 
 ```js
 const { chunkWhile } = require('chunk-arr');
@@ -130,7 +140,7 @@ console.log(chunkWhile(nums, (prev, curr) => prev <= curr));
 // Output: [[0, 9], [2, 2, 3], [2, 7], [5, 9], [5]]
 ```
 
-* Convert increasing numbers into the compact string
+* Convert increasing numbers into the compact string:
 
 ```js
 const { chunkWhile } = require('chunk-arr');
@@ -144,7 +154,7 @@ console.log(chunkWhile(nums, (prev, curr) => prev + 1 === curr)
 // Output: '1,2,4,9-12,15,16,19-21'
 ```
 
-* Split Markdown file by sections
+* Split Markdown file into sections:
 
 ```js
 const Fs = require('fs');
